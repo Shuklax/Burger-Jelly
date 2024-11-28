@@ -1,29 +1,66 @@
-{
-  /* <div id="parent">
-  <div id="child1">
-    <h1>I'm h1 tag</h1>
-    <h1>I'm h2 tag</h1>
-  </div>
-  <div id="child2">
-    <h1>I'm h1 tag</h1>
-    <h1>I'm h2 tag</h1>
-  </div>
-</div> */
+/*
+* Header
+* - Logo
+* - Navbar
+* Body
+* - Search
+* - RestaurantContainer
+* - - RestaurantCard
+* Footer
+* - Copyright
+* - Links
+* - Address
+* - Contact
+*/
+
+const Header = () => {
+    return (
+        <div className="header">
+            {/* Logo
+            Navbar */}
+            <div className="logo">
+                <img src="logo.png" alt="Logo"/>
+            </div>
+            <div className="navbar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    )
 }
 
-const heading = React.createElement("div", {id: "parent"}, [
-  React.createElement("div", {id: "child1"}, [
-    React.createElement("h1" ,{}, "I'm an h1 tag"),
-    React.createElement("h2", {}, "I'm an h2 tag") 
-  ]),
-  React.createElement("div", {id: "child2"}, [
-    React.createElement("h1", {}, "I'm an h1 tag"),
-    React.createElement("h2", {}, "I'm an h2 tag")
-  ]),
-]);
+const Body = () => {
+    return (
+        <div className="body">
+            {/* RestaurantContainer
+            --restaurantCard */}
+        </div>
+    )
+}
 
-console.log(heading);
+const Footer = () => {
+    return (
+        <div className="footer">
+            {/* Copyright
+            links
+            address
+            Contact */}
+        </div>
+    )
+}
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const AppLayout = () => {
+    return (
+        <div className="app">
+            <Header/>
+            <Body/>
+            <Footer/>
+        </div>
+    )
+}
 
-root.render(heading);
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(<AppLayout/>)

@@ -2,7 +2,7 @@ import { CARD_IMG } from "../utils/constants";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
-  const { name, rating, cuisines, locality, costForTwo, cloudinaryImageId } =
+  const { name, avgRating, cuisines, locality, costForTwo, cloudinaryImageId } =
     resData;
 
   return (
@@ -14,7 +14,7 @@ const RestaurantCard = (props) => {
       <div className="res-body">
         <h3>{name}</h3>
         <br />
-        <h4>{rating}</h4>
+        <h4>{avgRating}</h4>
         <h4>{cuisines.join(", ")}</h4>
         <h4>{locality}</h4>
         <h4>{costForTwo}</h4>

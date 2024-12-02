@@ -52,7 +52,7 @@
 .restaurantContainer{
   display: flex;
   flex-wrap: wrap;
-  margin: 0 10px 0 10%;
+  margin: 0 10px 0 12%;
 }
 
 .res-card-img{
@@ -82,5 +82,5 @@
 .shimmer-container{
   display: flex;
   flex-wrap: wrap;
-  margin: 0 10px 0 10%;
+  margin: 0 10px 0 12%;
 }

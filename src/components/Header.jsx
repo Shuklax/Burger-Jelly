@@ -1,6 +1,10 @@
+import { useState } from "react";
 import logo from "../../assets/logo.png";
 
-const Header = () => (
+const Header = () => {
+  const [btnName, setBtnName] = useState("login");
+
+  return (
     <div className="header">
       <div className="logo">
         <img src={logo} />
@@ -19,9 +23,18 @@ const Header = () => (
           <li>
             <a href="#">Cart</a>
           </li>
+          <button
+            className="loginBtn"
+            onClick={() => {
+              btnName === "login" ? setBtnName("logout") : setBtnName("login");
+            }}
+          >
+            {btnName}
+          </button>
         </ul>
       </div>
     </div>
   );
+};
 
-export default Header  
+export default Header;

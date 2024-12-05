@@ -84,3 +84,8 @@
   flex-wrap: wrap;
   margin: 0 10px 0 12%;
 }
+
+.res-body > h4 {
+  text-decoration: none;
+  color: inherit;
+}

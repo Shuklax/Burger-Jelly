@@ -89,3 +89,7 @@
   text-decoration: none;
   color: inherit;
 }
+
+div > .user-card{
+  border: 1px solid black;
+}

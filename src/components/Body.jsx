@@ -5,32 +5,28 @@ import "../../App.css";
 import { RESTAURANT_LIST } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import useFetchRestaurantCards from "../utils/useFetchRestaurantCards";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
-  
+  const jsonData = useFetchRestaurantCards();
 
   useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const data = await fetch(RESTAURANT_LIST);
-
-    const jsonData = await data.json();
-
     const restaurants =
       jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants || [];
 
     setListOfRestaurants(restaurants);
     setFilteredRestaurants(restaurants);
-  };
+  }, [jsonData]);
 
-  if (listOfRestaurants.length === 0) {
-    return <Shimmer />;
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false) {
+    return <h1>You're offline, please check your internet</h1>;
   }
 
   return listOfRestaurants === 0 ? (
@@ -74,7 +70,12 @@ const Body = () => {
       </div>
       <div className="restaurantContainer">
         {filteredRestaurants.map((restaurant) => (
-          <Link to={"/restaurants/" + restaurant.info.id} key={restaurant.info.id}><RestaurantCard resData={restaurant.info} /></Link>
+          <Link
+            to={"/restaurants/" + restaurant.info.id}
+            key={restaurant.info.id}
+          >
+            <RestaurantCard resData={restaurant.info} />
+          </Link>
         ))}
       </div>
     </div>

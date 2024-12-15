@@ -8,9 +8,9 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   return (
-    <div className="header">
+    <div className="flex">
       <div className="logo">
-        <img src={logo} />
+        <img src={logo}  className="w-56"/>
       </div>
       <div className="navbar">
         <ul>

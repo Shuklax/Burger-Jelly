@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+/* *{
   margin: 0;
   padding: 0;
 }
@@ -96,4 +96,4 @@
 
 div > .user-card{
   border: 1px solid black;
-}
+} */

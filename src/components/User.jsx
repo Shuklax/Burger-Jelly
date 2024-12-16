@@ -6,7 +6,7 @@ const User = (props) => {
     const [count2, seCount2] = useState(2);
 
     return (
-        <div className="user-card">
+        <div className="user-card bg-gray-50 rounded-lg">
             <br />
             <h2>{count} - {count2}<button onClick={()=>{
                 setCount(count + 1);

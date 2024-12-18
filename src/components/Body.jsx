@@ -19,6 +19,8 @@ const Body = () => {
       jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants || [];
 
+    console.log(restaurants);
+
     setListOfRestaurants(restaurants);
     setFilteredRestaurants(restaurants);
   }, [jsonData]);
@@ -44,7 +46,8 @@ const Body = () => {
               setSearchText(e.target.value);
             }}
           />
-          <button className="px-4 py-1 bg-green-100 m-4 rounded-lg"
+          <button
+            className="px-4 py-1 bg-green-100 m-4 rounded-lg"
             onClick={() => {
               const filtered = listOfRestaurants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -58,7 +61,7 @@ const Body = () => {
         </div>
         <div className="p-4 m-4 flex items-center">
           <button
-          className="px-4 py-2 bg-gray-200 rounded-lg"
+            className="px-4 py-2 bg-gray-200 rounded-lg"
             onClick={() => {
               const filtered = listOfRestaurants.filter(
                 (res) => res.info.avgRating > 4.3

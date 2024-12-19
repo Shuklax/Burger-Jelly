@@ -11,24 +11,28 @@ const RestaurantInfo = () => {
 
   if (resInfo === null) return <Shimmer />;
 
-  const { name, costForTwoMessage, cuisines, avgRating} =
+  const { name, costForTwoMessage, cuisines, avgRating } =
     resInfo?.data?.cards[2]?.card?.card?.info || {};
 
   const itemCards =
     resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
       ?.card?.itemCards || [];
 
+  console.log(resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR)
+
   return (
-    <div className="RestaurantInfo">
-      <h1>{name}</h1>
-      <p>{`${cuisines.join(", ")} - ${costForTwoMessage}`}</p>
-      <h2>Menu - {avgRating} stars</h2>
+    <div className="text-center">
+      <h1 className="my-4 font-bold text-2xl">{name}</h1>
+      <p className="text-lg mb-4 font-semibold">{`${cuisines.join(
+        ", "
+      )} - ${costForTwoMessage} - ${avgRating}⭐`}</p>
       <div className="RestaurantMenu">
         <ul>
           {itemCards.map((foodItem, index) => (
             <li key={foodItem.card.info.id || index}>
               {`${foodItem.card.info.name} - Rs${
-                foodItem.card.info.defaultPrice / 100 || foodItem.card.info.price / 100
+                foodItem.card.info.defaultPrice / 100 ||
+                foodItem.card.info.price / 100
               }`}
             </li>
           ))}

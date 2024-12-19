@@ -6,7 +6,7 @@ const RestaurantCard = (props) => {
     resData;
 
   return (
-    <div className="res-card m-6 p-4 w-[225px] rounded-xl bg-gray-100 hover:bg-gray-200">
+    <div className="res-card m-6 p-4 w-[245px] rounded-xl bg-gray-100 hover:bg-gray-200">
       <div>
         <img
           src={CARD_IMG + cloudinaryImageId}
@@ -26,7 +26,7 @@ const RestaurantCard = (props) => {
 };
 
 export const withPromotedLabel = (RestaurantCard) => {
-  return () => {
+  return (props) => {
     return (
       <div>
         <label>Promoted</label>

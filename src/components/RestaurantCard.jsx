@@ -1,4 +1,4 @@
-import { CARD_IMG } from "../utils/constants";
+import { CDN_URL } from "../utils/constants";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
@@ -9,7 +9,7 @@ const RestaurantCard = (props) => {
     <div className="res-card m-6 p-4 w-[245px] rounded-xl bg-gray-100 hover:bg-gray-200">
       <div>
         <img
-          src={CARD_IMG + cloudinaryImageId}
+          src={CDN_URL + cloudinaryImageId}
           className="res-card-img rounded-lg"
         />
       </div>

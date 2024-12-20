@@ -9,7 +9,8 @@ const RestaurantList = ({ data }) => {
         <p className="text-gray-500 font-normal pt-4">{data.description}</p>
       </div>
       <div className="w-3/12">
-        <img className="w-36 h-36 relative left-9 bottom-3 rounded-xl" src={CDN_URL_MENU + data.imageId} alt="card_img" />
+        <img className="w-36 h-36 relative left-9 bottom-3 rounded-xl z-0" src={CDN_URL_MENU + data.imageId} />
+        <button className="font-bold text-lg rounded-lg shadow-lg bg-white text-orange-500 py-2 px-6 border relative bottom-8 left-16 z-10">ADD</button>
       </div>
     </div>
   );

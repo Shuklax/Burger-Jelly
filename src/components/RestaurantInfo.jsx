@@ -6,6 +6,9 @@ import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantInfo = () => {
+
+  const [showItems, setShowItems] = useState()
+
   const { resId } = useParams();
 
   const resInfo = useRestaurantMenu(resId);
@@ -23,7 +26,7 @@ const RestaurantInfo = () => {
     resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards.filter(
       (c) =>
         c.card?.["card"]?.["@type"] ===
-          "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
   // console.log(resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR);
@@ -36,8 +39,13 @@ const RestaurantInfo = () => {
         ", "
       )} - ${costForTwoMessage} - ${avgRating}⭐`}</p>
       {/* {Restaurant category Accordion} */}
-      {categories.map((category) => (
-        <RestaurantCategory key={category?.card?.card?.title} data={category?.card?.card} />
+      {categories.map((category, index) => (
+        <RestaurantCategory
+          key={category?.card?.card?.title}
+          data={category?.card?.card}
+          showItems={index === showItems ? true : false}
+          setShowItems={()=>setShowItems(index)}
+        />
       ))}
     </div>
   );

@@ -37,7 +37,7 @@ const RestaurantInfo = () => {
       )} - ${costForTwoMessage} - ${avgRating}⭐`}</p>
       {/* {Restaurant category Accordion} */}
       {categories.map((category) => (
-        <RestaurantCategory data={category?.card?.card} />
+        <RestaurantCategory key={category?.card?.card?.title} data={category?.card?.card} />
       ))}
     </div>
   );

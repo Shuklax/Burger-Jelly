@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./App.css";
 import resObj from "./data.json";
@@ -10,16 +10,32 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Error from "./src/components/Error";
 import Contact from "./src/components/Contact";
 import RestaurantInfo from "./src/components/RestaurantInfo";
+import UserContext from "./src/utils/UserContext";
 
 const Grocery = lazy(() => import("./src/components/Grocery"));
 
 const About = lazy(() => import("./src/components/About"));
 
+
+
 const AppLayout = () => (
-  <div className="app">
+  // const [userName, setUserName] = useState(null);
+
+  // // authentication
+  // useEffect(()=>(
+  //   const data = {name:"Harsh"}
+  // ), [])
+
+  return (
+    <UserContext.Provider>
+      
+    <div className="app">
     <Header />
     <Outlet />
   </div>
+    </UserContext.Provider>
+  )
+  
 );
 
 const AppRouter = createBrowserRouter([

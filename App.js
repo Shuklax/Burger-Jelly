@@ -10,32 +10,16 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Error from "./src/components/Error";
 import Contact from "./src/components/Contact";
 import RestaurantInfo from "./src/components/RestaurantInfo";
-import UserContext from "./src/utils/UserContext";
 
 const Grocery = lazy(() => import("./src/components/Grocery"));
 
 const About = lazy(() => import("./src/components/About"));
 
-
-
 const AppLayout = () => (
-  // const [userName, setUserName] = useState(null);
-
-  // // authentication
-  // useEffect(()=>(
-  //   const data = {name:"Harsh"}
-  // ), [])
-
-  return (
-    <UserContext.Provider>
-      
-    <div className="app">
+  <div className="app">
     <Header />
     <Outlet />
   </div>
-    </UserContext.Provider>
-  )
-  
 );
 
 const AppRouter = createBrowserRouter([

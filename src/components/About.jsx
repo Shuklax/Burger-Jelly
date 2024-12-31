@@ -17,13 +17,6 @@ class About extends Component {
     return (
       <div className="AboutUs">
         <h1>ABOUT US</h1>
-        <div>
-          <userContext.Consumer>
-            {({ loggedInUser }) => (
-              <h1 className="text-xl font-bold">{loggedInUser}</h1>
-            )}
-          </userContext.Consumer>
-        </div>
         <h2>this is the about us page</h2>
         {/* <User name={"Harsh Shukla (function)"} location={"Mangalore"} contact={"Shuklax@Github"}/> */}
 

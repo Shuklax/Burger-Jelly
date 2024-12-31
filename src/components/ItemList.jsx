@@ -1,6 +1,15 @@
+import { useDispatch, useSelector } from "react-redux";
 import { CDN_URL_MENU } from "../utils/constants";
+import { addItem, addItem } from "../utils/cartSlice";
 
 const ItemList = ({ data }) => {
+
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    dispatch(addItem(item))
+  }
+
   return (
     <div className="text-left flex border-b-2 border-gray-300 p-3 py-6 ml-4 mt-3">
       <div className="w-9/12">
@@ -15,7 +24,7 @@ const ItemList = ({ data }) => {
           className="w-36 h-36 relative left-9 bottom-3 rounded-xl z-0"
           src={CDN_URL_MENU + data.imageId}
         />
-        <button className="font-bold text-lg rounded-lg shadow-lg bg-white text-orange-500 py-2 px-6 border relative bottom-8 left-16 z-10">
+        <button className="font-bold text-lg rounded-lg shadow-lg bg-white text-orange-500 py-2 px-6 border relative bottom-8 left-16 z-10" onClick={()=>{handleAddItem(data)}}>
           ADD
         </button>
       </div>

@@ -6,8 +6,6 @@ const RestaurantCard = (props) => {
   const { name, avgRating, cuisines, locality, costForTwo, cloudinaryImageId } =
     resData;
 
-  const User = useContext(userContext);
-
   return (
     <div className="res-card m-6 p-4 w-[245px] rounded-xl bg-gray-100 hover:bg-gray-200">
       <div>

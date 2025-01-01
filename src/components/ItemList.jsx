@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { CDN_URL_MENU } from "../utils/constants";
-import { addItem, addItem } from "../utils/cartSlice";
+import { addItem } from "../utils/cartSlice";
 
 const ItemList = ({ data }) => {
 

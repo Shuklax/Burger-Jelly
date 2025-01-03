@@ -6,7 +6,7 @@ import { clearCart } from "../utils/cartSlice";
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
   const dispatch = useDispatch();
-  const [btnState, setBtnState] = useState(true);
+  const [btnState, setBtnState] = useState(false);
 
   const handleClearCart = () => {
     if (cartItems.length === 0) {
@@ -26,7 +26,7 @@ const Cart = () => {
           CLEAR CART
         </button>
         {btnState && cartItems.length === 0 ? (
-          <p className="font-semibold bg-slate-500 text-black rounded-lg translate-x-12 w-4/12 justify-between">
+          <p className="font-semibold bg-slate-500 text-black rounded-lg w-4/12 mx-auto">
             The cart is already empty
           </p>
         ) : null}

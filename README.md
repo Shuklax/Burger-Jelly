@@ -18,11 +18,13 @@ with code -> Unit testing, integration testing, End-to-End testing aka e2e testi
 And jest is a javascript testing framework. It works on projects using babel, TS, JS, JSX, 
 node, angular, vue etc -->
 
-
 <!-- # Setting up testing in our app
  - Install React testing library
  - Install Jest
  - Install babel dependencies
  - Configure Babel
  - Configure Parcel config file to disable default babel transpilation in parcel
- (so it doesn't conflict with babel.config.js file configurations) -->
+ (so it doesn't conflict with babel.config.js file configurations) 
+ - Jest -> npx jest --init
+ - install jsdom library (to be installed separately in jest version 28 or later)
+ -->

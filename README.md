@@ -13,3 +13,16 @@ to identify defects, bugs, and other issues that may affect its functionality, p
 Other testing which the developer can do: 
 without code -> manual testing the app
 with code -> Unit testing, integration testing, End-to-End testing aka e2e testing -->
+
+<!-- The react testing library which is based on DOM- testing  library uses JEST behind the scene. 
+And jest is a javascript testing framework. It works on projects using babel, TS, JS, JSX, 
+node, angular, vue etc -->
+
+
+<!-- # Setting up testing in our app
+ - Install React testing library
+ - Install Jest
+ - Install babel dependencies
+ - Configure Babel
+ - Configure Parcel config file to disable default babel transpilation in parcel
+ (so it doesn't conflict with babel.config.js file configurations) -->

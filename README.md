@@ -27,4 +27,7 @@ node, angular, vue etc -->
  (so it doesn't conflict with babel.config.js file configurations) 
  - Jest -> npx jest --init
  - install jsdom library (to be installed separately in jest version 28 or later)
+ - install  npm i -D @babel/preset-react (this babel preset is helping to convert this jsx code to normal html code)
+ - install @testing-library/jest-dom (to be installed separately in jest version 28 or later
+ 
  -->

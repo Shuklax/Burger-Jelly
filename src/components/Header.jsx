@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import logo from "../../assets/logo.png";
+//import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { useSelector } from "react-redux";
@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <div className="flex justify-between bg-pink-100 shadow-lg">
       <div className="logo">
-        <img src={logo} className="w-52" />
+        {/* <img src={logo} className="w-52" /> */}
       </div>
       <div className="flex items-center">
         <ul className="flex p-4 m-4 ">

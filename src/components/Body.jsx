@@ -40,6 +40,7 @@ const Body = () => {
           <input
             type="text"
             placeholder="search....."
+            data-testid="searchInput"
             className="border border-solid border-black"
             value={searchText}
             onChange={(e) => {

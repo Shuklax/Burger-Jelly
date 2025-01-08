@@ -9,7 +9,7 @@ const RestaurantCard = (props) => {
     const isPromoted = avgRating < 4 ? true : false;
 
   return (
-    <div className="res-card m-6 p-4 w-[245px] rounded-xl bg-gray-100 hover:bg-gray-200">
+    <div data-testid="res-card" className="res-card m-6 p-4 w-[245px] rounded-xl bg-gray-100 hover:bg-gray-200">
       <div>
         <img
           src={CDN_URL + cloudinaryImageId}

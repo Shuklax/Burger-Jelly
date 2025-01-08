@@ -54,18 +54,42 @@ describe("Should search API mock data for input 'ice cream'", () => {
       );
     });
 
-    const searchBtn = screen.getByRole("button", {name: "Search"})
+    const cardsBeforeSearch = screen.getAllByTestId("res-card");
 
-    const searchInput = screen.getByTestId("searchInput")
+    expect(cardsBeforeSearch.length).toBe(20);
 
-    fireEvent.change(searchInput, {target: {value : "ice cream"}})
+    const searchBtn = screen.getByRole("button", { name: "Search" });
+
+    const searchInput = screen.getByTestId("searchInput");
+
+    fireEvent.change(searchInput, { target: { value: "ice cream" } });
 
     fireEvent.click(searchBtn);
 
-    const cards = screen.getAllByTestId("res-card")
+    const cards = screen.getAllByTestId("res-card");
 
     expect(cards.length).toBe(4);
   });
 });
 
-// it("Should filter the API mock data for top rated restaurants", () => {});
+it("Should filter the API mock data for top rated restaurants", async () => {
+  await act(async () => {
+    render(
+      <BrowserRouter>
+        <Body />
+      </BrowserRouter>
+    );
+  });
+
+  const cardsBeforeFilter = screen.getAllByTestId("res-card")
+
+  expect(cardsBeforeFilter.length).toBe(20);
+
+  const topRestaurantsButton = screen.getByRole("button", {name: "Top Rated Restaurants"})
+
+  fireEvent.click(topRestaurantsButton);
+
+  const cardsAfterFilter = screen.getAllByTestId("res-card");
+
+  expect(cardsAfterFilter.length).toBe(9);
+});

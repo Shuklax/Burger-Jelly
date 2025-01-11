@@ -11,7 +11,7 @@ const ItemList = ({ data }) => {
   }
 
   return (
-    <div className="text-left flex border-b-2 border-gray-300 p-3 py-6 ml-4 mt-3">
+    <div data-testid="menuItem" className="text-left flex border-b-2 border-gray-300 p-3 py-6 ml-4 mt-3">
       <div className="w-9/12">
         <p className="font-bold text-lg">{data.name}</p>
         <p className="font-semibold text-base">

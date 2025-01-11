@@ -2,23 +2,22 @@ import { render, screen } from "@testing-library/react";
 import Contact from "../Contact";
 import "@testing-library/jest-dom";
 
-describe("Contact us page test cases", () => {
-  beforeAll(() => {
-    console.log("before all");
-  });
-
-  afterAll(() => {
-    console.log("after all");
-  });
-
-  beforeEach(() => {
-    console.log("before each");
-  });
-
-  afterEach(() => {
-    console.log("after each");
-  });
+beforeAll(() => {
+  console.log("before all");
 });
+
+afterAll(() => {
+  console.log("after all");
+});
+
+beforeEach(() => {
+  console.log("before each");
+});
+
+afterEach(() => {
+  console.log("after each");
+});
+
 
 test("Should load contact us component", () => {
   render(<Contact />);
